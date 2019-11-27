@@ -41,11 +41,6 @@ CREATE DATABASE backupapp2;
 CREATE DATABASE backupapp3;
 ```
 
-3. Run migrations
-```sh
-php artisan migrate
-```
-
 ##### Run app :
 ```sh
 php artisan serve
