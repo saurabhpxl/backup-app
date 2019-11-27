@@ -7,6 +7,11 @@ use Illuminate\Console\Command;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
+/**
+ * Class BackupDatabases
+ * Command to take backup of all 4 databases
+ * @package App\Console\Commands
+ */
 class BackupDatabases extends Command
 {
     /**
@@ -23,7 +28,9 @@ class BackupDatabases extends Command
      */
     protected $description = 'Backup 4 configured databases in the system';
 
-
+    /**
+     * @var array
+     */
     private $dbDumps;
 
     /**
@@ -47,8 +54,6 @@ class BackupDatabases extends Command
                 storage_path('backups/' . config($key.'.database') . '_' . $timestamp .  '.sql')
             ));
         }
-
-
 
         parent::__construct();
     }
